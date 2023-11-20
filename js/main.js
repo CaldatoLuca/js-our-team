@@ -59,7 +59,7 @@ const team = [
   },
 ];
 
-//*screo le schede dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
+//*creo le schede dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
 for (let i = 0; i < team.length; i++) {
   const element = document.createElement("div");
   element.classList.add("col-12", "col-md-6", "col-lg-4");
