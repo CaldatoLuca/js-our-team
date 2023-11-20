@@ -19,15 +19,25 @@
 //!funzioni
 
 const createImg = (imgString, containerClass) => {
-  const elementImg = document.createElement("div");
-  elementImg.classList.add(containerClass);
-  elementImg.innerHTML = imgString;
-  return elementImg;
+  const element = document.createElement("div");
+  element.classList.add(containerClass);
+  element.innerHTML = imgString;
+  return element;
+};
+
+const createDescription = () => {
+  const element = document.createElement("div");
+  element.classList.add("-lc-description", "text-center", "p-3", "bg-light");
+  element.innerHTML = "ci";
+  return element;
 };
 
 //!programma
+//* elementi html
 const elementRow = document.querySelector(".row");
 const fragmentRow = document.createDocumentFragment();
+
+//* dati del team - array di oggetti
 const team = [
   {
     name: "Wayne Barnett",
@@ -75,8 +85,7 @@ for (let i = 0; i < team.length; i++) {
       "-lc-img"
     )
   );
-  element.append(`${team[i].name} - `);
-  element.append(`${team[i].role} - `);
+  element.append(createDescription());
 
   fragmentRow.append(element);
 }
