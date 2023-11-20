@@ -18,6 +18,13 @@
 "use strict";
 //!funzioni
 
+const createImg = (imgString, containerClass) => {
+  const elementImg = document.createElement("div");
+  elementImg.classList.add(containerClass);
+  elementImg.innerHTML = imgString;
+  return elementImg;
+};
+
 //!programma
 const elementRow = document.querySelector(".row");
 const fragmentRow = document.createDocumentFragment();
@@ -57,23 +64,20 @@ const team = [
 //*stampo in console le informazioni dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
 for (let i = 0; i < team.length; i++) {
   const element = document.createElement("div");
-  const elementImg = document.createElement("span");
-
-  element.append(`${team[i].name} - `);
-  element.append(`${team[i].role} - `);
-  elementImg.innerHTML = `<img
+  element.classList.add("col-12", "col-md-6", "col-lg-4");
+  element.append(
+    createImg(
+      `<img
   class="img-fluid"
   src="img/${team[i].img}"
   alt="Angela Carrol"
-/>`;
-  element.append(elementImg);
+/>`,
+      "-lc-img"
+    )
+  );
+  element.append(`${team[i].name} - `);
+  element.append(`${team[i].role} - `);
 
   fragmentRow.append(element);
 }
 elementRow.append(fragmentRow);
-
-// console.log(`'${i + 1}° membro del team'`);
-// console.log(team[i].name);
-// console.log(team[i].role);
-// console.log(team[i].img);
-// console.log("-----");
