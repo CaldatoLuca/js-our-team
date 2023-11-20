@@ -1,5 +1,7 @@
 # Our Team
 
+![thumnail](/readme-img/thumnail.jpeg)
+
 _HTML+css+js_
 
 Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
