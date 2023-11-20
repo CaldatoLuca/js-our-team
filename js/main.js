@@ -51,3 +51,12 @@ const team = [
     img: "barbara-ramos-graphic-designer.jpg",
   },
 ];
+
+//*stampo in console le informazioni dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
+for (let i = 0; i < team.length; i++) {
+  console.log(`'${i + 1}° membro del team'`);
+  console.log(team[i].name);
+  console.log(team[i].role);
+  console.log(team[i].img);
+  console.log("-----");
+}
