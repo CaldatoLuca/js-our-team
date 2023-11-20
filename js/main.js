@@ -25,10 +25,15 @@ const createImg = (imgString, containerClass) => {
   return element;
 };
 
-const createDescription = () => {
+const createDescription = (counter) => {
   const element = document.createElement("div");
+  const elementH3 = document.createElement("h3");
+  const elementDiv = document.createElement("div");
   element.classList.add("-lc-description", "text-center", "p-3", "bg-light");
-  element.innerHTML = "ci";
+  elementH3.innerHTML = team[counter].name;
+  elementDiv.innerHTML = team[counter].role;
+  element.append(elementH3);
+  element.append(elementDiv);
   return element;
 };
 
@@ -78,14 +83,14 @@ for (let i = 0; i < team.length; i++) {
   element.append(
     createImg(
       `<img
-  class="img-fluid"
+  class="img-fluid w-100"
   src="img/${team[i].img}"
   alt="Angela Carrol"
 />`,
       "-lc-img"
     )
   );
-  element.append(createDescription());
+  element.append(createDescription(i));
 
   fragmentRow.append(element);
 }
