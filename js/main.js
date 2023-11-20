@@ -57,10 +57,16 @@ const team = [
 //*stampo in console le informazioni dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
 for (let i = 0; i < team.length; i++) {
   const element = document.createElement("div");
+  const elementImg = document.createElement("span");
 
   element.append(`${team[i].name} - `);
   element.append(`${team[i].role} - `);
-  element.append(`${team[i].img}`);
+  elementImg.innerHTML = `<img
+  class="img-fluid"
+  src="img/${team[i].img}"
+  alt="Angela Carrol"
+/>`;
+  element.append(elementImg);
 
   fragmentRow.append(element);
 }
