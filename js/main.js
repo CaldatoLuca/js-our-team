@@ -19,6 +19,8 @@
 //!funzioni
 
 //!programma
+const elementRow = document.querySelector(".row");
+const fragmentRow = document.createDocumentFragment();
 const team = [
   {
     name: "Wayne Barnett",
@@ -54,9 +56,18 @@ const team = [
 
 //*stampo in console le informazioni dei membri del team (è un normale array ma nelle sue posizioni ho degli oggetti)
 for (let i = 0; i < team.length; i++) {
-  console.log(`'${i + 1}° membro del team'`);
-  console.log(team[i].name);
-  console.log(team[i].role);
-  console.log(team[i].img);
-  console.log("-----");
+  const element = document.createElement("div");
+
+  element.append(`${team[i].name} - `);
+  element.append(`${team[i].role} - `);
+  element.append(`${team[i].img}`);
+
+  fragmentRow.append(element);
 }
+elementRow.append(fragmentRow);
+
+// console.log(`'${i + 1}° membro del team'`);
+// console.log(team[i].name);
+// console.log(team[i].role);
+// console.log(team[i].img);
+// console.log("-----");
